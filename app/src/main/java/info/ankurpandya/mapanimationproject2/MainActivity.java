@@ -6,7 +6,7 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.LinearInterpolator;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -206,7 +206,14 @@ public class MainActivity extends AppCompatActivity
 
         animator = ValueAnimator.ofInt(0, STEPS);
         animator.setDuration(SPEED);
-        animator.setInterpolator(new LinearInterpolator());
+        //animator.setInterpolator(new LinearInterpolator());
+        //animator.setInterpolator(new OvershootInterpolator());
+        //animator.setInterpolator(new BounceInterpolator());
+        //animator.setInterpolator(new AccelerateInterpolator());
+        //animator.setInterpolator(new AccelerateDecelerateInterpolator());
+        //animator.setInterpolator(new AnticipateInterpolator());
+        //animator.setInterpolator(new CycleInterpolator());
+        animator.setInterpolator(new DecelerateInterpolator());
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animator) {
